@@ -31,3 +31,18 @@
     @apply bg-white rounded-lg shadow-md border border-gray-200 p-6;
   }
 }
+
+/* Estilos para marcadores del mapa - TEMPORALMENTE COMENTADOS
+.custom-div-icon {
+  background: transparent;
+  border: none;
+}
+
+.custom-div-icon div {
+  transition: all 0.3s ease;
+}
+
+.custom-div-icon div:hover {
+  transform: scale(1.2);
+}
+*/
