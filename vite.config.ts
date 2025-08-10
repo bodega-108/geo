@@ -29,5 +29,14 @@ export default defineConfig({
   },
   server: {
     port: 3001,
+    cors: {
+      origin: [
+        'https://mfe-host-stage.up.railway.app',
+        'http://localhost:3000',
+        'http://localhost:3001',
+        'http://localhost:5173'
+      ],
+      credentials: true,
+    },
   }
 })
