@@ -31,16 +31,27 @@ export default defineConfig({
   server: {
     port: 3001,
     cors: {
-      origin: '*',
+      origin: ['http://localhost:5002', 'http://localhost:3000', 'http://localhost:5173'],
       credentials: true,
     },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS, HEAD',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true'
+    }
   },
   preview: {
     port: 3001,
+    cors: {
+      origin: '*',
+      credentials: true,
+    },
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS, HEAD',
       'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true'
     }
   }
 })
