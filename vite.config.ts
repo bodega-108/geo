@@ -30,10 +30,7 @@ export default defineConfig({
   },
   server: {
     port: 3001,
-    cors: {
-      origin: ['http://localhost:5002', 'http://localhost:3000', 'http://localhost:5173'],
-      credentials: true,
-    },
+    cors: false,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, OPTIONS, HEAD',
@@ -43,10 +40,7 @@ export default defineConfig({
   },
   preview: {
     port: 3001,
-    cors: {
-      origin: '*',
-      credentials: true,
-    },
+    cors: false,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, OPTIONS, HEAD',
