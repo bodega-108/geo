@@ -1,10 +1,11 @@
+// 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     federation({
       name: 'geo',
       filename: 'remoteEntry.js',
@@ -30,13 +31,16 @@ export default defineConfig({
   server: {
     port: 3001,
     cors: {
-      origin: [
-        'https://mfe-host-stage.up.railway.app',
-        'http://localhost:3000',
-        'http://localhost:3001',
-        'http://localhost:5173'
-      ],
+      origin: '*',
       credentials: true,
     },
+  },
+  preview: {
+    port: 3001,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': '*',
+    }
   }
 })
